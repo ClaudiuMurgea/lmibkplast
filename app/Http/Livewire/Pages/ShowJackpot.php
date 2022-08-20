@@ -7,6 +7,10 @@ use Livewire\Component;
 class ShowJackpot extends Component
 {
     public $var = false;
+    public $showJackpot = true;
+    public $showAll = false;
+
+    protected $listeners = ['goBack'];
 
     public function render()
     {
@@ -15,5 +19,11 @@ class ShowJackpot extends Component
     public function save()
     {
         $this->emit('value', 'jackpots');
+        // $this->showJackpot = false;
+        // $this->showAll = true;
+    }
+    public function goBack() {
+        $this->showJackpot = false;
+        $this->showAll = true;
     }
 }

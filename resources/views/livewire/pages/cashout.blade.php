@@ -1,15 +1,85 @@
-<div style="height:88vh;width:100%;overflow-y:scroll;padding-bottom:3rem;padding-left:10px;" class='w-100 d-flex flex-column main-page'>
-    <div style="position:absolute; top:2%; index: 1000; left:45%; color: #fff;">
-        Cashout page
-    </div>
-    <div class='jackpot-btn-wrap'>
-        @for ($i = 1; $i < 55; $i++)
-            <div wire:click="showJackpot({{ $i }})">
-                <div style="text-align:center; padding-bottom:0; margin-bottom:0;">
-                    <img style="margin-bottom:0;" class='mt-2 jackpot-btn' id='jackpot-btn{{$i}}' src='/img/jackpot-btn.png'>
-                </div>
-                <p style="display:block; text-align:center; padding-top:0;color: #fff; opacity:0.9;" class='text-center'>Jackpot {{ $i }}</p>
-            </div>
-        @endfor
-    </div>
+<div class='w-100 d-flex flex-column main-page'>
+    <table style="color:#fff;width:90%; margin:0 auto; margin-top:2rem; outline:1px solid #fff;border-radius:10px;" class="table custom_table_background">
+        <thead>
+            <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <th scope="row">5</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th scope="row">6</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+            </tr>
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <th scope="row">5</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th scope="row">6</th>
+                <td colspan='2'>jbfdjsfosndfdsaaaaaaiodfsdf  fjsdfodn</td>
+                <td>@twitter</td>
+            </tr>
+        </tbody>
+    </table>
 </div>

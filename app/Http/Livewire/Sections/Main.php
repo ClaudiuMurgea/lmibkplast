@@ -29,11 +29,17 @@ class Main extends Component
     public function ShowComponent($data) 
     {
         $this->component = $data;
+        $this->emitTo('pages.show-jackpot','goBack');
     }
-    public function back($data)
+    public function back()
     {
-        $this->mount();
-        $this->render();
+        $this->emitTo('pages.show-jackpot','goBack');
+        $this->showBack = false;
+
+        // Livewire::listen('component.hydrate', function ($component, $request) {
+        // $this->component = $data;
+        // //
+        // });
         // $this->showBack = false;
         // $this->redirect(request()->header('Referer'));
         // $this->times += 1; 
@@ -41,6 +47,7 @@ class Main extends Component
         // if ($this->times > 1) {
         // }
     }
+  
     public function value($value)
     {
         $this->showBack = true;

@@ -13,7 +13,9 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/carousel.css') }}">
         @livewireStyles
     </head>
-    <body class="d-flex flex-column justify-content-between align-items-center h-100vh">
+    <body   style=' max-height:100vh;min-height:100vh; height:100vh;
+                    max-width:100vw; min-width:100vw;  width:100vw;' 
+            class=" d-flex flex-column justify-content-between align-items-center">
         @livewireScripts
         @if(isset($slot))
             {{ $slot }}

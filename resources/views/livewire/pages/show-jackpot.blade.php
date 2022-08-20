@@ -1,13 +1,9 @@
-<div style="height:88vh;overflow-y:scroll;padding-bottom:3rem;margin-left:10px;">
-@extends('layouts.app')
-@section('content')
-    <!-- <button class="custom-btn btn-6 back-btn">Silver</button> -->
-    <div wire:click="save()">
-        test
-    </div>
-        <table style="width:90%; margin: 0 auto; " class="table1 text-center">
+<div class='w-100 d-flex flex-column main-page'>
+ 
+    @if($showJackpot)
+        <table style="width:90%; margin: 0 auto;margin-top:2rem" class="table1 text-center">
             <thead>
-                <tr style="line-height:0;">
+                <tr style="line-height:0.5;">
                     <th style="border:none;opacity:0.9">Index</th>
                     <th style="border:none;opacity:0.9">Slot</th>
                     <th style="border:none;opacity:0.9">Value</th>
@@ -15,7 +11,7 @@
                 </tr>
             </thead>
             <tbody style="margin-left:2px !important;">
-                <tr>
+                <tr style="border-top: 2px solid #50bfff">
                     <td style="border:none;border-right:2px solid #59bfff; border-bottom:2px solid #59bfff;opacity:0.9">1</td>
                     <td style="border:none;border-right:2px solid #59bfff; border-bottom:2px solid #59bfff;opacity:0.9">1</td>
                     <td style="border:none;border-right:2px solid #59bfff; border-bottom:2px solid #59bfff;opacity:0.9">1.00</td>
@@ -95,5 +91,8 @@
                 </tr>
             </tbody>
         </table>
-        @endsection
+    @elseif($showAll)
+        <livewire:pages.jackpots    :id="1" :wire:key="2">
+    @endif
+
 </div>

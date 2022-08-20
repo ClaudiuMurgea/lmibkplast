@@ -1,4 +1,10 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap');
+.title_font {
+    font-family: 'Barlow Condensed', sans-serif;
+}
+* {
+    font-family: 'Barlow Condensed', sans-serif;
+}
 body {
     background: #252a37;
 }
@@ -79,7 +85,7 @@ body {
     -moz-border-radius:2px;
     -webkit-border-radius:2px;
     border-radius:2px;
-    color:#666;
+    color:#000;
     text-shadow:1px 1px 1px #fff;
 }
 .table1 tbody span.check::before{
@@ -107,13 +113,16 @@ h5{
     width:100vw;
     display:flex;
     justify-content: center;
+    margin-bottom: 0 !important;
 }
 label::before{
     content:"";
     display: inline-block;
     margin-bottom:4px;
-    border: 12px solid transparent;
-    border-left:16px solid orange;
+    margin-top:4px;
+    opacity:0.5;
+    border: 8px solid transparent;
+    border-left:16px solid rgba(255, 165, 0.8);
     transition-duration:0.2s;
     transition-timing-function:ease-out;
     -webkit-transition-duration:0.2s;
@@ -138,9 +147,11 @@ div.p p {
     padding:2em;
 }
 input:checked ~ h5 label::before{
-    border-left:12px solid transparent;
-    border-top:16px solid orange;
+    border-left:10px solid transparent;
+    border-top:14px solid rgba(255, 165, 0.8);
     transition-duration:0.2s;
+    margin-top:0;
+    opacity:1;
     transition-timing-function:ease-out;
     -webkit-transition-duration:0.2s;
     -webkit-transition-timing-function:ease-out;
@@ -151,13 +162,20 @@ input:checked ~ h5 label::before{
 input:checked ~ h5 ~ div.p{
 max-height:100px;
 }
+
 /* input:checked ~ .hide {
     display:none !important;; 
 } */
-body {
+/* body {
     background: linear-gradient(-45deg, #9acd32, #953553, #FF5349, #0d98ba);
     background-size: 500% 500%;
     animation: gradient 10s ease infinite;
+} */
+body {
+    background: linear-gradient(45deg,crimson, #E94584, #24AADB , #27DBB1,#953553, #FF3706);
+    background-size: 600% 100%;
+    animation: gradient 16s linear infinite;
+    animation-direction: alternate;
 }
 @keyframes gradient {
     0% {
