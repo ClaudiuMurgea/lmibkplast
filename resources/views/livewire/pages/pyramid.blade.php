@@ -1,12 +1,9 @@
-<div style="padding-bottom:3rem;" class='w-100 d-flex flex-column main-page'>
-    <div class='jackpot-btn-wrap'>
-        @for ($i = 1; $i < 55; $i++)
-            <div wire:click="showJackpot({{ $i }})">
-                <div style="text-align:center; padding-bottom:0; margin-bottom:0;">
-                    <img style="margin-bottom:0;" class='mt-2 jackpot-btn' id='jackpot-btn{{$i}}' src='/img/jackpot-btn.png'>
-                </div>
-                <p style="display:block; text-align:center; padding-top:0;color: #fff; opacity:0.9;" class='text-center'>Jackpot {{ $i }}</p>
-            </div>
-        @endfor
+<div class='d-flex flex-column main-page max_height overflow'>
+<div style="position:absolute; top:0;z-index:9999;" class="custom_title">Pyramid</div>
+    <div style="margin-top:2rem;" class='jackpot-btn-wrap'>
+           Pyramid Page
+    </div>
+    <div class="padding_bottom">
+        &nbsp;
     </div>
 </div>

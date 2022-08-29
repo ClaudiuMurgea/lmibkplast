@@ -1,4 +1,4 @@
-$(document).ready(function () {
+// $(document).ready(function () {
     // var itemsMainDiv = ('.MultiCarousel');
     // var itemsDiv = ('.MultiCarousel-inner');
     // var itemWidth = "";
@@ -99,4 +99,4 @@ $(document).ready(function () {
     //     var slide = $(Parent).attr("data-slide");
     //     ResCarousel(ell, Parent, slide);
     // }
-});
+// });

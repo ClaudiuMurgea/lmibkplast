@@ -13,6 +13,7 @@ img:not(.left-arrow img, .right-arrow img, .header-img){
 .header-img{
     width: 25px !important;
     height: 25px !important;
+    margin-bottom:3px;
 }
 table{
     font-size: 21px;
@@ -47,16 +48,21 @@ table{
     position: relative;
 }
 ::-webkit-scrollbar {
-    width: 6px;
+    width: 16px;
 }
 ::-webkit-scrollbar-track {
-    background:#bbb;
+    background: linear-gradient(1deg,#d24e01, #f1b04c, #dc6601,#d24e01,#e27602,#ec9006,#f1b04c,#ec9006, #e27602,#d24e01, #dc6601,#f1b04c, #d24e01);
     border-radius: 20px;
     opacity:0.5;
+
 }
 ::-webkit-scrollbar-thumb {
-    background: rgb(75, 68, 68);
+    background: linear-gradient(90deg, #444, #d24e01, #f1b04c, #d24e01, #000);
+    animation: animatedgradient 20s ease alternate infinite;
+    background-size: 120% 120%;
     border-radius: 20px;
+    border-top: 1px solid #ec9006;
+    border-bottom: 1px solid #ec9006;
 }
 
 .jackpot-btn-wrap{

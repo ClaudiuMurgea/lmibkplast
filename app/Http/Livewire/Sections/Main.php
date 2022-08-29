@@ -14,9 +14,10 @@ class Main extends Component
     public $points;
     public $showBack = false;
     public $times;
+    public $slideActive = true;
 
     protected $listeners = [
-        'value'
+        'value', 'slide'
     ];
     public function mount()
     {
@@ -30,6 +31,7 @@ class Main extends Component
     {
         $this->component = $data;
         $this->emitTo('pages.show-jackpot','goBack');
+        $this->slideActive = true;
     }
     public function back()
     {
@@ -53,5 +55,9 @@ class Main extends Component
         $this->showBack = true;
         $this->showThis = $value;
         $this->component = $value;
+    }
+    public function slide($value)
+    {
+        $this->slideActive = $value;
     }
 }

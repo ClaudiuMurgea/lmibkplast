@@ -9,9 +9,13 @@ class ShowJackpot extends Component
     public $var = false;
     public $showJackpot = true;
     public $showAll = false;
+    public $jackpotID;
 
     protected $listeners = ['goBack'];
 
+    public function mount($ids) {
+        $this->jackpotID = $ids;
+    }
     public function render()
     {
         return view('livewire.pages.show-jackpot');

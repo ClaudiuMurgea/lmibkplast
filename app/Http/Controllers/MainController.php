@@ -13,6 +13,9 @@ class MainController extends Controller
         
         // $getPID = DB::select("select LmiPP.MAC2PID('".$mac."') PID");
         // $PID=$getPID[0]->PID;
+        $test = ["merchantId" => "SITM2202280707", "classId" => "01", "operationId" => "0600"];
+        $encoded = json_encode($test);
+
         return view('welcome');
     }
     public function test(){

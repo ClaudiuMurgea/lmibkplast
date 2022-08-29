@@ -11,5 +11,5 @@ class Page extends Model
 
     protected $guarded = [];
     protected $primaryKey = 'ID';
-    protected $table = 'AdminInfo';
+    protected $table = 'lmi.AdminInfo';
 }
