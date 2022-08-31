@@ -1,5 +1,6 @@
-<div  style=" @if($keyboard) overflow:hidden; margin-right:6px !important; @endif" class='d-flex flex-column main-page max_height overflow'>
-    <div style="position:absolute; top:0;z-index:9999;" class="custom_title">Cashout</div>
+<div  style=" @if($keyboard) overflow:hidden; margin-right:6px !important; @endif" class='d-flex flex-column max_height overflow main-page cashout-page'>
+
+    <div class="custom_title plifscroll">Cashout</div>
 
     @if($keyboard)
         <div id="container">  
@@ -41,21 +42,20 @@
         </div>  
     @endif
 
-    <table style=" margin-top:2rem; " class="table custom_table_background max_width text-white bolder  radius_10">
+    <table style=" margin-top:2rem;border-bottom:none; " class="table custom_table_background max_width text-white bolder  radius_10">
         <thead>
             <tr>
             <th style="width:100px;text-align:center;border-top:none !important;" scope="col">ID</th>
-                
-            <th scope="col" style="position:relative;z-index:1;display:flex;"  wire:click="showKeyboard()">
-            <img style="position:absolute; height:30px; width:30px;object-fit:contain;left:-10%;top:15%;z-index:1;" class="hide_keyboard" src="{{url('/header-images/magnify.png')}}">
-            Slot</th>
+            <th scope="col" style="position:relative;z-index:1;display:flex;"  wire:click="showKeyboard()">Slot
+            <!-- <img style="position:absolute; height:30px; width:30px;object-fit:contain;left:-10%;top:15%;z-index:1;" class="hide_keyboard" src="{{url('/header-images/magnify.png')}}"> -->
+            </th>
             <th scope="col">Value</th>
             <th scope="col">MaxInactiveMin</th>
             </tr>
         </thead>
         <tbody>
             @foreach($test as $value)
-                <tr>
+            <tr>
                     <th @if($loop->last) style="border-bottom: none; text-align:center;"  @else style="text-align:center;" @endif    scope="row">1</th>
                     <td @if($loop->last) style="border-bottom: none;" @endif>2</td>
                     <td @if($loop->last) style="border-bottom: none;" @endif> {{ $value->Login }} </td>
@@ -68,46 +68,21 @@
                     <td @if($loop->last) style="border-bottom: none;" @endif> {{ $value->MaxInactiveMin }}</td>
                 </tr>
             @endforeach
-            <!-- <tr>
-                <th scope="row">1</th>
-                <td>4</td>
-                <td> 505.50 </td>
-                <td>2022-08-05 17:24:09</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>4</td>
-                <td>1,225.00</td>
-                <td>2022-08-05 17:24:09</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>4</td>
-                <td>573.00</td>
-                <td>2022-08-05 17:24:09</td>
-            </tr>
-            <tr>
-                <th class="no_border_b" scope="row">4</th>
-                <td class="no_border_b">4</td>
-                <td class="no_border_b">17,416.10</td>
-                <td class="no_border_b">2022-08-05 17:24:09</td>
-            </tr> -->
         </tbody>
     </table>
+
     <div class="padding_bottom">
         &nbsp;
     </div>
-    <div class="arrow" wire:ignore>
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
+
     <script>
-        var article = document.getElementsByTagName('table')[0]; 
+        var market = document.getElementsByClassName('cashout-page')[0]; 
         var screenHeight = window.innerHeight;
-        var scrollTop = document.querySelector("div.arrow").scrollTop;
-        if (article.scrollHeight > screenHeight) { 
-            document.querySelector("div.arrow").style.display = "block"; 
+        if (market.scrollHeight > screenHeight) { 
+            document.querySelector("div.plifscroll").style.paddingLeft= "16px"; 
+            document.querySelector("div.arrow").style.display= "block";
+        } else {
+            document.querySelector("div.arrow").style.display= "none";  
         }
     </script>
 </div>

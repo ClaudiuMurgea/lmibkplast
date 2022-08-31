@@ -21,7 +21,7 @@ class Main extends Component
     ];
     public function mount()
     {
-        $this->component = 'jackpots';
+        $this->component = 'market';
     }
     public function render()
     {
@@ -32,6 +32,7 @@ class Main extends Component
         $this->component = $data;
         $this->emitTo('pages.show-jackpot','goBack');
         $this->slideActive = true;
+        $this->showBack = false;
     }
     public function back()
     {

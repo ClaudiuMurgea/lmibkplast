@@ -515,6 +515,110 @@ body {
 </div>
 
 <a class="suppoprt-me" href="https://www.buymeacoffee.com/marioduarte" target="_blank"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a Coffee&nbsp&emoji=&slug=marioduarte&button_colour=FF5F5F&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00"></a> -->
+@foreach($test as $t)
+            {{$nr++}}
+
+            @if($nr % 2 != 0)
+            @dump(1)
+            <div style="background:red; width:90%; margin:0 auto;display:flex;justify-content:space-between;padding-left:16px;">
+            @endif
+
+            @if($loop->index % 2 == 0)
+                <div style="width:50%; background:green;text-align:center;margin-right:0.9rem;">
+                    <div style="display:flex; justify-content: space-between;">
+                        <div style="display:flex; flex-direction:column; background:yellow;width:100%;margin-right:1.8rem;">
+                            <div style="font-size:1.3rem;text-align:center;">
+                                Product Name
+                            </div>
+                            <div style="text-align:left; padding-left:0.5rem;">
+                                Points : number
+                            </div>
+                        </div>
+                        <div style="background:pink;width:100px;display:flex; align-items:center;justify-content:center;">
+                            <div class="door_image_wrapper">
+                                <img class="zoom door_img" src="data:image/png;base64,{{ chunk_split(base64_encode($t->Resource)) }}" alt="image" width="100" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @elseif($loop->index % 2 != 0)
+            
+                <div style="width:50%; background:blue;margin-left:0.9rem;">
+                    <div style="display:flex; justify-content: space-between;">
+                        <div style="background:pink;width:100px;display:flex; align-items:center;justify-content:center;">
+                            <div class="door_image_wrapper">
+                                <img class="zoom door_img" src="data:image/png;base64,{{ chunk_split(base64_encode($t->Resource)) }}" alt="image" width="100" />
+                            </div>
+                        </div>
+                        <div style="display:flex; flex-direction:column; background:yellow;width:100%;margin-left:1.8rem;">
+                            <div style="font-size:1.3rem;text-align:center;">
+                                Product Name
+                            </div>
+                            <div style="text-align:left; padding-left:0.5rem;">
+                                Points : number
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            @endif
+
+            @if($nr % 2 != 0)
+            </div>
+
+            @endif
+
+        @endforeach
+
+
+
+
+
+        <div style="display:grid;grid-template-rows: 1fr; row-gap:40px; grid-template-columns: 2fr 1fr 1fr 2fr">
+        @for($i = 1; $i ++)
+        <div>
+            Product name
+        </div>
+        <div>
+            image
+        </div>
+    </div>
+
+    <div class="abc" style="min-height: 0;min-width: 0;display:grid;width:90%;margin:0 auto;padding-top:2rem;grid-template-rows: 1fr; row-gap:40px; grid-template-columns: 2fr 1fr 1fr 2fr; column-gap:1.6rem;">
+        @foreach($test as $t)
+            @if($loop->index % 2 != 0)
+                <div style="background: linear-gradient(0deg, rgba(166,166,166,1) 0%, rgba(255,255,255,1) 29%);display:flex; align-items:center;justify-content:center;">
+                    <div class="door_image_wrapper">
+                        <img class="zoom door_img" src="data:image/png;base64,{{ chunk_split(base64_encode($t->Resource)) }}" alt="image" width="100" />
+                    </div>
+                </div>
+                <div style="background:yellow;display:flex;flex-direction:column;">
+                    <div style="font-size:1.3rem;text-align:center;">
+                        Product name
+                    </div>
+                    <div style="padding-top:6px; padding-left:10px;overflow:auto;max-height:100px;">
+                        Product Details Product Details Product Details Product Details Product Details Product Details 
+                    </div>
+                </div>
+            @else 
+                <div style="background:yellow;display:flex;flex-direction:column;">
+                    <div style="font-size:1.3rem;text-align:center;">
+                        Product name
+                    </div>
+                    <div style="padding-top:6px; padding-left:10px;">
+                        Product Details
+                    </div>
+                </div>
+                <div style="background: linear-gradient(0deg, rgba(166,166,166,1) 0%, rgba(255,255,255,1) 29%);display:flex; align-items:center;justify-content:center;">
+                    <div class="door_image_wrapper">
+                        <img class="zoom door_img" src="data:image/png;base64,{{ chunk_split(base64_encode($t->Resource)) }}" alt="image" width="100" />
+                    </div>
+                </div>
+            @endif 
+        @endforeach
+    </div>
+
+    
 <script>
   $('.slider').slick({
 	dots: true,

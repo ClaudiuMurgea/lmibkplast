@@ -1,9 +1,9 @@
-<div class='d-flex flex-column max_height overflow main-page tombola-page'>
+<div class='d-flex flex-column max_height overflow main-page okto-page'>
 
-    <div class="custom_title">Tombola</div>
+    <div class="custom_title">Okto</div>
 
-    <div class="plifscroll">
-        <!-- content -->
+    <div style="margin:0 auto;width:256px;padding-top:2rem" class="plifscroll">
+        {!! QrCode::size(256)->generate("$encoded") !!}
     </div>
 
     <div class="padding_bottom">
@@ -11,7 +11,7 @@
     </div>
 
     <script>
-        var market = document.getElementsByClassName('tombola-page')[0]; 
+        var market = document.getElementsByClassName('okto-page')[0]; 
         var screenHeight = window.innerHeight;
         if (market.scrollHeight > screenHeight) { 
             document.querySelector("div.plifscroll").style.paddingLeft= "16px"; 

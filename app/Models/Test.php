@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Test extends Model
 {
-    protected $table = 'Admininfo';
+    protected $guarded = [];
+    protected $primaryKey = 'Id';
+    protected $table = 'WineDispenser.products_market';
 }

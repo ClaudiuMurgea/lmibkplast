@@ -1,7 +1,9 @@
-<div class='d-flex flex-column main-page max_height overflow'>
- 
+<div class='d-flex flex-column max_height overflow main-page showjackpot-page'>
+
     @if($showJackpot)
-        <div style="position:absolute; top:0;z-index:9999;" class="custom_title">Jackpot {{ $jackpotID }}</div>
+
+        <div class="custom_title">Jackpot {{ $jackpotID }}</div>
+
         <table style="margin-top:2rem;" class="table1 text-center max_width">
             <thead>
                 <tr class="header_line-height">
@@ -93,24 +95,20 @@
                 </tr>
             </tbody>
         </table>
-    <div class="padding_bottom">
-        &nbsp;
-    </div>
-    <div class="arrow" wire:ignore>
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-    <script>
-        var article = document.getElementsByClassName('table1')[0]; 
-        var screenHeight = window.innerHeight;
-        var scrollTop = document.querySelector("div.arrow").scrollTop;
-        if (article.scrollHeight > screenHeight) { 
-            document.querySelector("div.arrow").style.display = "block"; 
-        }
-    </script>
+
+        <div class="padding_bottom">
+            &nbsp;
+        </div>
+ 
     @elseif($showAll)
         <livewire:pages.jackpots    :id="1" :wire:key="111">
     @endif
-    
+
+    <!-- <script>
+        var showjackpot = document.getElementsByClassName('showjackpot-page')[0]; 
+        var screenHeight = window.innerHeight;
+        if (showjackpot.scrollHeight < screenHeight) { 
+            document.querySelector("div.arrow").style.display = "none"; 
+        }
+    </script> -->
 </div>

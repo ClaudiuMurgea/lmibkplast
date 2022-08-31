@@ -12,16 +12,17 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/mystyle.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/carousel.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/keyboard.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/loading.css') }}">
         <script src="{{url('js/carousel.js')}}"></script>
         <script src="{{url('js/jquery-3.5.1.min.js')}}"></script>
         <script src="{{url('js/require.js')}}"></script>
         <script src="{{url('js/myscript.js')}}"></script>
+        <!-- <script src="{{url('js/sweetalert.js')}}"></script> -->
         @livewireStyles
     </head>
     <body class="d-flex flex-column justify-content-between align-items-center body_size">
         @livewireScripts
         
         @yield('content')
-
     </body>
 </html>

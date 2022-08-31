@@ -41,6 +41,7 @@ table{
     border-radius: 0px 0px 20px 20px;
     box-shadow: 0px 0px 10px 4px #191919;
     background-color: #222222;
+    position:relative;
 }
 #navbar{
     background-color: #191919;
@@ -64,6 +65,7 @@ table{
     border-top: 1px solid #ec9006;
     border-bottom: 1px solid #ec9006;
 }
+
 
 .jackpot-btn-wrap{
     display:grid;

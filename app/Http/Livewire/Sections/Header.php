@@ -8,11 +8,13 @@ use Illuminate\Support\Facades\DB;
 class Header extends Component
 {
     public $pid;
-    public $points;
     public $name;
     public $data;
+    public $points = "90000000";
     public $MasterIP;
     public $readyToLoad = false;
+
+    protected $listeners = [ 'golow' ];
 
     public function mount() {
         // $mac = "00:2e:15:00:14:82";
@@ -41,9 +43,15 @@ class Header extends Component
         // $this->pid = $data[0];
         // $this->points = $data[1];
         // $this->name = $data[2];
+
+        
+        $this->name = "Murgea Claudiu";
     }
     public function render()
     {
         return view('livewire.sections.header');
+    }
+    public function golow($amt) {
+        $this->points -= $amt;
     }
 }

@@ -27,11 +27,14 @@
         @case('tombola')
             <livewire:pages.tombola     :user="1" :wire:key="8">
         @break
-        @case('settings')
-            <livewire:pages.settings    :user="1" :wire:key="9">
+        @case('autolevel')
+            <livewire:pages.autolevel   :user="1" :wire:key="9">
+        @break
+        @case('okto')
+            <livewire:pages.okto        :user="1" :wire:key="10">
         @break
         @default
-            <livewire:pages.bonus       :user="1" :wire:key="222">
+            <livewire:pages.jackpots    :user="1" :wire:key="222">
     @endswitch
 
     <div class='container-fluid px-0'>
@@ -40,15 +43,14 @@
             <h5 style="display:flex; align-items: center;margin-bottom:15px;position:relative;">
                 {{-- border:2px solid #fff; outline:1px solid #ccc --}}
             @if($showBack)
-                <button wire:click="back" style="position:absolute; top:0; left:0;" class="custom-btn"> 
+                <button wire:click="back" class="custom-btn font_size-1-2"> 
                     <img style="height:20px;width:20px;margin:0 auto;margin-bottom:2px;" src='slide-images/back.png'>
                     Back
                 </button>
             @endif 
-            <label for="faq-1" style="height:30px !important; padding:0.2rem 2rem !important; color: rgba(255, 255, 255, 0.7); background: rgba(33, 37, 41, 1);
-                                      border-top-right-radius: 10px;border-top-left-radius: 10px;font-size:1.2rem; font-weight:600;text-shadow:1px 1px #000;" class="px-2"> Menu </label></h5>
+            <label for="faq-1" class="px-2 menu_button dark_text font_size-1-2"> Menu </label></h5>
             <div style="width:100vw !important;" class="p">
-                <div class='container-fluid d-flex justify-content-between align-items-center text-light ' id='navbar' wire:ignore>
+                <div class='container-fluid d-flex justify-content-between align-items-center text-light' id='navbar' wire:ignore>
                     <div class="MultiCarousel" data-items="2, 4, 5, 6" data-slide="2" id="MultiCarousel"  data-interval="1000">
                         <div style="background: #222222;font-weight:600;font-size:1.1rem" class="MultiCarousel-inner">
                             <div class="item" wire:click="ShowComponent('jackpots')">     <img style="height:60px;width:60px;margin:0 auto;" src='slide-images/jackpot.png'>  Jackpots    </div>
@@ -58,24 +60,37 @@
                             <div class="item" wire:click="ShowComponent('quest')">        <img style="height:60px;width:60px;margin:0 auto;" src='slide-images/mission.png'>  Quest       </div>
                             <div class="item" wire:click="ShowComponent('pyramid')">      <img style="height:60px;width:60px;margin:0 auto;" src='slide-images/pyramid.png'>  Pyramid     </div>
                             <div class="item" wire:click="ShowComponent('tombola')">      <img style="height:60px;width:60px;margin:0 auto;" src='slide-images/raffle.png'>   Tombola     </div>
-                            <div class="item" wire:click="ShowComponent('market')">       <img style="height:60px;width:60px;margin:0 auto;" src='slide-images/shop.png'>     Market      </div>
+                            <div style="position:relative;" class="item" wire:click="ShowComponent('market')">       <img style="height:60px;width:60px;margin:0 auto;" src='slide-images/shop.png'>    
+                                <div style="position:absolute;left:24%;background:transparent;" wire:loading wire:target="ShowComponent('market')">
+                                    <x-loading/>
+                                </div>
+                                Market      
+                            </div>
                             <div class="item" wire:click="ShowComponent('okto')">         <img style="height:35px;width:35px;margin:0.8rem auto;" src='slide-images/oktoqr.png'>  Okto    </div>
-                            <div class="item" wire:click="ShowComponent('settings')">     <img style="height:60px;width:60px;margin:0 auto;" src='slide-images/ranking.png'>  Auto Level  </div>
+                            <div class="item" wire:click="ShowComponent('autolevel')">    <img style="height:60px;width:60px;margin:0 auto;" src='slide-images/ranking.png'>  Auto Level  </div>
                         </div>
-                        <img style="outline: 1px solid #00ff00;" class="leftLst"  src='slide-images/left-arrow.png'>
-                        <img style="outline: 1px solid #00ff00;" class="rightLst" src='slide-images/right-arrow.png'>
+                        <img class="leftLst default_outline"  src='slide-images/left-arrow.png'>
+                        <img class="rightLst default_outline" src='slide-images/right-arrow.png'>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- </div> -->
     </div>
 </div>
+<div class="arrow" wire:ignore>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
 <script>
-    // if(!$slideActive) 
-    //     $('input.inputUncheck').removeAttr('checked');
-    // }
-    
+    var article = document.getElementsByClassName('main-page')[0]; 
+    var screenHeight = window.innerHeight;
+    var scrollTop = document.querySelector("div.arrow").scrollTop;
+    if (article.scrollHeight > screenHeight) { 
+        document.querySelector("div.arrow").style.display = "block"; 
+    }
+</script>
+<script>
     var itemsMainDiv = ('.MultiCarousel');
     var itemsDiv = ('.MultiCarousel-inner');
     var itemWidth = "";

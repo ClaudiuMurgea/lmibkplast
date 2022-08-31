@@ -4,7 +4,7 @@ namespace App\Http\Livewire\Pages;
 
 use Livewire\Component;
 
-class Settings extends Component
+class Autolevel extends Component
 {
     public $content;
     public $title = 'Bonus';
@@ -27,6 +27,6 @@ class Settings extends Component
     }
     public function render()
     {
-        return view('livewire.pages.settings');
+        return view('livewire.pages.autolevel');
     }
 }

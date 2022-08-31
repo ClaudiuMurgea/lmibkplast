@@ -1,7 +1,9 @@
-<div class='d-flex flex-column main-page max_height overflow'>
-    <div style="position:absolute; top:0;z-index:9999;" class="custom_title">News</div>
-    <div id="test" style="margin-top:2rem;" class="max_width scrollarrow">
-        <div style="border-radius:10px !important;outline:1px solid #fff;" class="card">
+<div class='d-flex flex-column max_height overflow main-page news-page'>
+
+    <div class="custom_title">News</div>
+
+    <div style="margin-top:2rem;" class="max_width">
+        <div style="border-radius:10px !important;" class="card">
             <div class="card-header pb-0">
                 <h5 class="text-center max_width">Title</h5>
                 <ul class="list-unstyled setting-option">
@@ -21,7 +23,6 @@
                     <h5 style="width:90%; margin:0 auto;" class="text-center">Important!</h5>
                     <p>Reminder</p>
                 </div>
-        
                 <div style="width:100%; text-align:center;">
                     <div class="card">
                         <div class="card-header pb-0">
@@ -41,20 +42,19 @@
             </div>
         </div>
     </div>
+
     <div class="padding_bottom">
         &nbsp;
     </div>
-    <div class="arrow" wire:ignore>
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
+    
     <script>
-        var article2 = document.getElementsById('test')[0]; 
-        var screenHeight2 = window.innerHeight;
-        var scrollTop2 = document.querySelector("div.arrow").scrollTop;
-        if (article.scrollHeight2 > screenHeight2) { 
-            document.querySelector("div.arrow").style.display = "block"; 
+        var market = document.getElementsByClassName('news-page')[0]; 
+        var screenHeight = window.innerHeight;
+        if (market.scrollHeight > screenHeight) { 
+            document.querySelector("div.plifscroll").style.paddingLeft= "16px"; 
+            document.querySelector("div.arrow").style.display= "block"; 
+        } else {
+            document.querySelector("div.arrow").style.display= "none";  
         }
     </script>
 </div>
